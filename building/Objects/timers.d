@@ -1,0 +1,15 @@
+.\building\objects\timers.o: ..\..\FreeRTOS\src\timers.c
+.\building\objects\timers.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\building\objects\timers.o: ..\..\FreeRTOS\inc\FreeRTOS.h
+.\building\objects\timers.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\building\objects\timers.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\building\objects\timers.o: ..\..\FreeRTOS\inc\FreeRTOSConfig.h
+.\building\objects\timers.o: ..\..\FreeRTOS\inc\projdefs.h
+.\building\objects\timers.o: ..\..\FreeRTOS\inc\portable.h
+.\building\objects\timers.o: ..\..\FreeRTOS\inc\deprecated_definitions.h
+.\building\objects\timers.o: ..\..\FreeRTOS\inc\portmacro.h
+.\building\objects\timers.o: ..\..\FreeRTOS\inc\mpu_wrappers.h
+.\building\objects\timers.o: ..\..\FreeRTOS\inc\task.h
+.\building\objects\timers.o: ..\..\FreeRTOS\inc\list.h
+.\building\objects\timers.o: ..\..\FreeRTOS\inc\queue.h
+.\building\objects\timers.o: ..\..\FreeRTOS\inc\timers.h

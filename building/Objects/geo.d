@@ -1,0 +1,17 @@
+.\building\objects\geo.o: ..\..\math\geo\Geo.cpp
+.\building\objects\geo.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+.\building\objects\geo.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\building\objects\geo.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\float.h
+.\building\objects\geo.o: ..\..\math\Math.hpp
+.\building\objects\geo.o: ..\..\math\filter/LowPassFilter2p.hpp
+.\building\objects\geo.o: ..\..\math\limit/Limit.hpp
+.\building\objects\geo.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\building\objects\geo.o: ..\..\math\geo/Geo.hpp
+.\building\objects\geo.o: ..\..\math\geo/Geo_mag_declination.hpp
+.\building\objects\geo.o: ..\..\math\math/Vector.hpp
+.\building\objects\geo.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\building\objects\geo.o: ..\..\math\math/Eigen_math.hpp
+.\building\objects\geo.o: ..\..\math\math/Matrix.hpp
+.\building\objects\geo.o: ..\..\math\matrix/SquareMatrix.hpp
+.\building\objects\geo.o: ..\..\math\matrix/Matrix.hpp
+.\building\objects\geo.o: ..\..\math\math/Quaternion.hpp

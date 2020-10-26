@@ -1,0 +1,10 @@
+.\building\objects\gimbal_pid.o: ..\..\math\gimbal\gimbal_pid.cpp
+.\building\objects\gimbal_pid.o: ..\..\math\gimbal\gimbal_pid.h
+.\building\objects\gimbal_pid.o: ..\..\modules\topics\topics.h
+.\building\objects\gimbal_pid.o: ..\..\modules\topics\msg_gimbal.h
+.\building\objects\gimbal_pid.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\building\objects\gimbal_pid.o: ..\..\modules\topics\msg_driver.h
+.\building\objects\gimbal_pid.o: ..\..\modules\topics\pid.h
+.\building\objects\gimbal_pid.o: ..\..\modules\topics\msg_attitude.h
+.\building\objects\gimbal_pid.o: ..\..\modules\topics\rc_ctl.h
+.\building\objects\gimbal_pid.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
