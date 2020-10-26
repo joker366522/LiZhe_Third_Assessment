@@ -1,7 +1,8 @@
-.\building\objects\usart1.o: drivers\usart1.c
+.\building\objects\usart1.o: function\usart1.c
+.\building\objects\usart1.o: function\main.h
 .\building\objects\usart1.o: .\libraries\inc\stm32f4xx.h
 .\building\objects\usart1.o: .\startup\core_cm4.h
-.\building\objects\usart1.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\building\objects\usart1.o: F:\keil\ARM\ARMCC\Bin\..\include\stdint.h
 .\building\objects\usart1.o: .\libraries\inc\core_cmInstr.h
 .\building\objects\usart1.o: .\libraries\inc\core_cmFunc.h
 .\building\objects\usart1.o: .\libraries\inc\core_cmSimd.h
@@ -20,4 +21,12 @@
 .\building\objects\usart1.o: .\libraries\inc\stm32f4xx_tim.h
 .\building\objects\usart1.o: .\libraries\inc\stm32f4xx_usart.h
 .\building\objects\usart1.o: .\libraries\inc\misc.h
-.\building\objects\usart1.o: drivers\usart1.h
+.\building\objects\usart1.o: function\can.h
+.\building\objects\usart1.o: function\main.h
+.\building\objects\usart1.o: function\timer.h
+.\building\objects\usart1.o: function\PID.h
+.\building\objects\usart1.o: function\remote.h
+.\building\objects\usart1.o: function\imu_data_decode.h
+.\building\objects\usart1.o: F:\keil\ARM\ARMCC\Bin\..\include\stdbool.h
+.\building\objects\usart1.o: function\packet.h
+.\building\objects\usart1.o: function\usart1.h

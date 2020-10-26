@@ -1,7 +1,7 @@
 Dependencies for Project 'Robot', Target 'STM32F405RG': (DO NOT MODIFY !)
 F (.\startup\startup_stm32f4xx.s)(0x5F2E1182)(--cpu Cortex-M4.fp -g --apcs=interwork --pd "__MICROLIB SETA 1"-I.\RTE\_STM32F405RG-IF:\keil\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IF:\keil\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 528" --pd "STM32F405xx SETA 1"--list .\building\listings\startup_stm32f4xx.lst --xref -o .\building\objects\startup_stm32f4xx.o --depend .\building\objects\startup_stm32f4xx.d)
-F (.\drivers\main.c)(0x5F9098B2)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I .\drivers -I .\startup -I .\function -I .\libraries\inc-I.\RTE\_STM32F405RG-IF:\keil\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IF:\keil\ARM\CMSIS\Include-D__UVISION_VERSION="528" -DSTM32F405xx -DUSE_STDPERIPH_DRIVER-o .\building\objects\main.o --omf_browse .\building\objects\main.crf --depend .\building\objects\main.d)
-I (.\function\main.h)(0x5F91893B)
+F (.\drivers\main.c)(0x5F9528F9)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I .\drivers -I .\startup -I .\function -I .\libraries\inc-I.\RTE\_STM32F405RG-IF:\keil\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IF:\keil\ARM\CMSIS\Include-D__UVISION_VERSION="528" -DSTM32F405xx -DUSE_STDPERIPH_DRIVER-o .\building\objects\main.o --omf_browse .\building\objects\main.crf --depend .\building\objects\main.d)
+I (.\function\main.h)(0x5F931A83)
 I (.\libraries\inc\stm32f4xx.h)(0x5F2E11A4)
 I (.\startup\core_cm4.h)(0x5F2E1181)
 I (F:\keil\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
@@ -22,12 +22,16 @@ I (.\libraries\inc\stm32f4xx_syscfg.h)(0x5F2E11B6)
 I (.\libraries\inc\stm32f4xx_tim.h)(0x5F2E11B7)
 I (.\libraries\inc\stm32f4xx_usart.h)(0x5F2E11B7)
 I (.\libraries\inc\misc.h)(0x5F2E11A3)
-I (.\function\can.h)(0x5F90AAF7)
-I (.\function\timer.h)(0x5F9089DF)
-I (.\function\PID.h)(0x5F90ABF4)
-I (.\function\remote.h)(0x5F919996)
-F (.\function\can.c)(0x5F92CAEE)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I .\drivers -I .\startup -I .\function -I .\libraries\inc-I.\RTE\_STM32F405RG-IF:\keil\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IF:\keil\ARM\CMSIS\Include-D__UVISION_VERSION="528" -DSTM32F405xx -DUSE_STDPERIPH_DRIVER-o .\building\objects\can.o --omf_browse .\building\objects\can.crf --depend .\building\objects\can.d)
-I (function\main.h)(0x5F91893B)
+I (.\function\can.h)(0x5F93E611)
+I (.\function\timer.h)(0x5F9531CF)
+I (.\function\PID.h)(0x5F956789)
+I (.\function\remote.h)(0x5F934B70)
+I (.\function\imu_data_decode.h)(0x5A9A9CB6)
+I (F:\keil\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (.\function\packet.h)(0x5A9A9CB6)
+I (.\function\usart1.h)(0x5F931A83)
+F (.\function\can.c)(0x5F952E90)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I .\drivers -I .\startup -I .\function -I .\libraries\inc-I.\RTE\_STM32F405RG-IF:\keil\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IF:\keil\ARM\CMSIS\Include-D__UVISION_VERSION="528" -DSTM32F405xx -DUSE_STDPERIPH_DRIVER-o .\building\objects\can.o --omf_browse .\building\objects\can.crf --depend .\building\objects\can.d)
+I (function\main.h)(0x5F931A83)
 I (.\libraries\inc\stm32f4xx.h)(0x5F2E11A4)
 I (.\startup\core_cm4.h)(0x5F2E1181)
 I (F:\keil\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
@@ -48,12 +52,16 @@ I (.\libraries\inc\stm32f4xx_syscfg.h)(0x5F2E11B6)
 I (.\libraries\inc\stm32f4xx_tim.h)(0x5F2E11B7)
 I (.\libraries\inc\stm32f4xx_usart.h)(0x5F2E11B7)
 I (.\libraries\inc\misc.h)(0x5F2E11A3)
-I (function\can.h)(0x5F90AAF7)
-I (function\timer.h)(0x5F9089DF)
-I (function\PID.h)(0x5F90ABF4)
-I (function\remote.h)(0x5F919996)
-F (.\function\timer.c)(0x5F918D53)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I .\drivers -I .\startup -I .\function -I .\libraries\inc-I.\RTE\_STM32F405RG-IF:\keil\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IF:\keil\ARM\CMSIS\Include-D__UVISION_VERSION="528" -DSTM32F405xx -DUSE_STDPERIPH_DRIVER-o .\building\objects\timer.o --omf_browse .\building\objects\timer.crf --depend .\building\objects\timer.d)
-I (function\main.h)(0x5F91893B)
+I (function\can.h)(0x5F93E611)
+I (function\timer.h)(0x5F9531CF)
+I (function\PID.h)(0x5F956789)
+I (function\remote.h)(0x5F934B70)
+I (function\imu_data_decode.h)(0x5A9A9CB6)
+I (F:\keil\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (function\packet.h)(0x5A9A9CB6)
+I (function\usart1.h)(0x5F931A83)
+F (.\function\timer.c)(0x5F956789)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I .\drivers -I .\startup -I .\function -I .\libraries\inc-I.\RTE\_STM32F405RG-IF:\keil\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IF:\keil\ARM\CMSIS\Include-D__UVISION_VERSION="528" -DSTM32F405xx -DUSE_STDPERIPH_DRIVER-o .\building\objects\timer.o --omf_browse .\building\objects\timer.crf --depend .\building\objects\timer.d)
+I (function\main.h)(0x5F931A83)
 I (.\libraries\inc\stm32f4xx.h)(0x5F2E11A4)
 I (.\startup\core_cm4.h)(0x5F2E1181)
 I (F:\keil\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
@@ -74,12 +82,16 @@ I (.\libraries\inc\stm32f4xx_syscfg.h)(0x5F2E11B6)
 I (.\libraries\inc\stm32f4xx_tim.h)(0x5F2E11B7)
 I (.\libraries\inc\stm32f4xx_usart.h)(0x5F2E11B7)
 I (.\libraries\inc\misc.h)(0x5F2E11A3)
-I (function\can.h)(0x5F90AAF7)
-I (function\timer.h)(0x5F9089DF)
-I (function\PID.h)(0x5F90ABF4)
-I (function\remote.h)(0x5F919996)
-F (.\function\PID.c)(0x5F919E39)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I .\drivers -I .\startup -I .\function -I .\libraries\inc-I.\RTE\_STM32F405RG-IF:\keil\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IF:\keil\ARM\CMSIS\Include-D__UVISION_VERSION="528" -DSTM32F405xx -DUSE_STDPERIPH_DRIVER-o .\building\objects\pid.o --omf_browse .\building\objects\pid.crf --depend .\building\objects\pid.d)
-I (function\main.h)(0x5F91893B)
+I (function\can.h)(0x5F93E611)
+I (function\timer.h)(0x5F9531CF)
+I (function\PID.h)(0x5F956789)
+I (function\remote.h)(0x5F934B70)
+I (function\imu_data_decode.h)(0x5A9A9CB6)
+I (F:\keil\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (function\packet.h)(0x5A9A9CB6)
+I (function\usart1.h)(0x5F931A83)
+F (.\function\PID.c)(0x5F956789)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I .\drivers -I .\startup -I .\function -I .\libraries\inc-I.\RTE\_STM32F405RG-IF:\keil\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IF:\keil\ARM\CMSIS\Include-D__UVISION_VERSION="528" -DSTM32F405xx -DUSE_STDPERIPH_DRIVER-o .\building\objects\pid.o --omf_browse .\building\objects\pid.crf --depend .\building\objects\pid.d)
+I (function\main.h)(0x5F931A83)
 I (.\libraries\inc\stm32f4xx.h)(0x5F2E11A4)
 I (.\startup\core_cm4.h)(0x5F2E1181)
 I (F:\keil\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
@@ -100,13 +112,16 @@ I (.\libraries\inc\stm32f4xx_syscfg.h)(0x5F2E11B6)
 I (.\libraries\inc\stm32f4xx_tim.h)(0x5F2E11B7)
 I (.\libraries\inc\stm32f4xx_usart.h)(0x5F2E11B7)
 I (.\libraries\inc\misc.h)(0x5F2E11A3)
-I (function\can.h)(0x5F90AAF7)
-I (function\timer.h)(0x5F9089DF)
-I (function\PID.h)(0x5F90ABF4)
-I (function\remote.h)(0x5F919996)
-F (.\function\remote.c)(0x5F919A1B)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I .\drivers -I .\startup -I .\function -I .\libraries\inc-I.\RTE\_STM32F405RG-IF:\keil\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IF:\keil\ARM\CMSIS\Include-D__UVISION_VERSION="528" -DSTM32F405xx -DUSE_STDPERIPH_DRIVER-o .\building\objects\remote.o --omf_browse .\building\objects\remote.crf --depend .\building\objects\remote.d)
-I (function\remote.h)(0x5F919996)
-I (function\main.h)(0x5F91893B)
+I (function\can.h)(0x5F93E611)
+I (function\timer.h)(0x5F9531CF)
+I (function\PID.h)(0x5F956789)
+I (function\remote.h)(0x5F934B70)
+I (function\imu_data_decode.h)(0x5A9A9CB6)
+I (F:\keil\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (function\packet.h)(0x5A9A9CB6)
+I (function\usart1.h)(0x5F931A83)
+F (.\function\remote.c)(0x5F956392)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I .\drivers -I .\startup -I .\function -I .\libraries\inc-I.\RTE\_STM32F405RG-IF:\keil\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IF:\keil\ARM\CMSIS\Include-D__UVISION_VERSION="528" -DSTM32F405xx -DUSE_STDPERIPH_DRIVER-o .\building\objects\remote.o --omf_browse .\building\objects\remote.crf --depend .\building\objects\remote.d)
+I (function\main.h)(0x5F931A83)
 I (.\libraries\inc\stm32f4xx.h)(0x5F2E11A4)
 I (.\startup\core_cm4.h)(0x5F2E1181)
 I (F:\keil\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
@@ -127,9 +142,57 @@ I (.\libraries\inc\stm32f4xx_syscfg.h)(0x5F2E11B6)
 I (.\libraries\inc\stm32f4xx_tim.h)(0x5F2E11B7)
 I (.\libraries\inc\stm32f4xx_usart.h)(0x5F2E11B7)
 I (.\libraries\inc\misc.h)(0x5F2E11A3)
-I (function\can.h)(0x5F90AAF7)
-I (function\timer.h)(0x5F9089DF)
-I (function\PID.h)(0x5F90ABF4)
+I (function\can.h)(0x5F93E611)
+I (function\timer.h)(0x5F9531CF)
+I (function\PID.h)(0x5F956789)
+I (function\remote.h)(0x5F934B70)
+I (function\imu_data_decode.h)(0x5A9A9CB6)
+I (F:\keil\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (function\packet.h)(0x5A9A9CB6)
+I (function\usart1.h)(0x5F931A83)
+F (.\function\usart1.c)(0x5F932877)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I .\drivers -I .\startup -I .\function -I .\libraries\inc-I.\RTE\_STM32F405RG-IF:\keil\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IF:\keil\ARM\CMSIS\Include-D__UVISION_VERSION="528" -DSTM32F405xx -DUSE_STDPERIPH_DRIVER-o .\building\objects\usart1.o --omf_browse .\building\objects\usart1.crf --depend .\building\objects\usart1.d)
+I (function\main.h)(0x5F931A83)
+I (.\libraries\inc\stm32f4xx.h)(0x5F2E11A4)
+I (.\startup\core_cm4.h)(0x5F2E1181)
+I (F:\keil\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (.\libraries\inc\core_cmInstr.h)(0x5F2E11A0)
+I (.\libraries\inc\core_cmFunc.h)(0x5F2E119F)
+I (.\libraries\inc\core_cmSimd.h)(0x5F2E11A0)
+I (.\libraries\inc\system_stm32f4xx.h)(0x5F2E11B9)
+I (.\libraries\inc\stm32f4xx_conf.h)(0x5F2E11A8)
+I (.\libraries\inc\stm32f4xx_adc.h)(0x5F2E11A6)
+I (.\libraries\inc\stm32f4xx_can.h)(0x5F2E11A7)
+I (.\libraries\inc\stm32f4xx_dma.h)(0x5F2E11AC)
+I (.\libraries\inc\stm32f4xx_exti.h)(0x5F2E11AD)
+I (.\libraries\inc\stm32f4xx_flash.h)(0x5F2E11AE)
+I (.\libraries\inc\stm32f4xx_gpio.h)(0x5F2E11AF)
+I (.\libraries\inc\stm32f4xx_i2c.h)(0x5F2E11B0)
+I (.\libraries\inc\stm32f4xx_rcc.h)(0x5F2E11B2)
+I (.\libraries\inc\stm32f4xx_syscfg.h)(0x5F2E11B6)
+I (.\libraries\inc\stm32f4xx_tim.h)(0x5F2E11B7)
+I (.\libraries\inc\stm32f4xx_usart.h)(0x5F2E11B7)
+I (.\libraries\inc\misc.h)(0x5F2E11A3)
+I (function\can.h)(0x5F93E611)
+I (function\timer.h)(0x5F9531CF)
+I (function\PID.h)(0x5F956789)
+I (function\remote.h)(0x5F934B70)
+I (function\imu_data_decode.h)(0x5A9A9CB6)
+I (F:\keil\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (function\packet.h)(0x5A9A9CB6)
+I (function\usart1.h)(0x5F931A83)
+F (.\function\packet.c)(0x5F93214B)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I .\drivers -I .\startup -I .\function -I .\libraries\inc-I.\RTE\_STM32F405RG-IF:\keil\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IF:\keil\ARM\CMSIS\Include-D__UVISION_VERSION="528" -DSTM32F405xx -DUSE_STDPERIPH_DRIVER-o .\building\objects\packet.o --omf_browse .\building\objects\packet.crf --depend .\building\objects\packet.d)
+I (F:\keil\ARM\ARMCC\include\string.h)(0x5CEB79E2)
+I (F:\keil\ARM\ARMCC\include\stdio.h)(0x5CEB79E2)
+I (function\packet.h)(0x5A9A9CB6)
+I (F:\keil\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (F:\keil\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+F (.\function\imu_data_decode.c)(0x5A9A9CB5)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I .\drivers -I .\startup -I .\function -I .\libraries\inc-I.\RTE\_STM32F405RG-IF:\keil\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IF:\keil\ARM\CMSIS\Include-D__UVISION_VERSION="528" -DSTM32F405xx -DUSE_STDPERIPH_DRIVER-o .\building\objects\imu_data_decode.o --omf_browse .\building\objects\imu_data_decode.crf --depend .\building\objects\imu_data_decode.d)
+I (F:\keil\ARM\ARMCC\include\string.h)(0x5CEB79E2)
+I (F:\keil\ARM\ARMCC\include\stdio.h)(0x5CEB79E2)
+I (function\packet.h)(0x5A9A9CB6)
+I (F:\keil\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (F:\keil\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (function\imu_data_decode.h)(0x5A9A9CB6)
 F (.\libraries\src\misc.c)(0x5F2E1185)(--c99 -c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I .\drivers -I .\startup -I .\function -I .\libraries\inc-I.\RTE\_STM32F405RG-IF:\keil\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IF:\keil\ARM\CMSIS\Include-D__UVISION_VERSION="528" -DSTM32F405xx -DUSE_STDPERIPH_DRIVER-o .\building\objects\misc.o --omf_browse .\building\objects\misc.crf --depend .\building\objects\misc.d)
 I (.\libraries\inc\misc.h)(0x5F2E11A3)
 I (.\libraries\inc\stm32f4xx.h)(0x5F2E11A4)

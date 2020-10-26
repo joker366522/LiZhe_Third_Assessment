@@ -26,3 +26,7 @@
 .\building\objects\timer.o: function\timer.h
 .\building\objects\timer.o: function\PID.h
 .\building\objects\timer.o: function\remote.h
+.\building\objects\timer.o: function\imu_data_decode.h
+.\building\objects\timer.o: F:\keil\ARM\ARMCC\Bin\..\include\stdbool.h
+.\building\objects\timer.o: function\packet.h
+.\building\objects\timer.o: function\usart1.h

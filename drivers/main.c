@@ -4,10 +4,17 @@
 float limit = 2000;
 int main(void)
 {  
-	CAN1_Mode_Init();
-	TIM3_Int_Init();
+    CAN1_Mode_Init();
+	CAN2_Mode_Init();
+	 
 	PidInit();
+	uart5_init();
+	
+	imu_data_decode_init(); 
+	
 	remote_config();
+	StraightInit();
+	TIM3_Int_Init();//定时器初始化之前，读取当前的角度值作为初始化角度
     while(1){}
 }
 

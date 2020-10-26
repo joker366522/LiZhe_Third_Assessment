@@ -1,4 +1,5 @@
 #include "main.h"
+ 
 typedef struct 
 {
     float Kp,Ki,Kd; 
@@ -9,38 +10,49 @@ typedef struct
 	float now_error;
 	float last_error; //上次误差
 	float previous_error; //上上次误差
-	float i_error; //位置式PID独有的误差和
-	float sum_error;
+	float i_error; 
+	float sum_error;//位置式PID独有的误差和
 	float result;
 	
 	float out_max;
 	float limit;
 }PID_Structure;
 
-PID_Structure Error1,Error2,Error3,Error4;
+PID_Structure Error1,Error2,Error3,Error4,Error5_up12,Error5_up122;
 
 void PidInit(void)
-{
+ {
 	Error1.Kp = Error2.Kp = Error3.Kp = Error4.Kp = 10;
 	Error1.Ki = Error2.Ki = Error3.Ki = Error4.Ki = 0.01;
 	Error1.Kd = Error2.Kd = Error3.Kd = Error4.Kd = 0;
+	Error5_up12.Kp = 200;
+	Error5_up12.Ki = 0;
+    Error5_up12.Kd = 0;
+	Error5_up122.Kp = 10;
+	Error5_up122.Ki = 0;
+    Error5_up122.Kd = 0;
+	 
+	Error1.want_speed = Error2.want_speed = Error3.want_speed = Error4.want_speed = Error5_up12.want_speed = Error5_up122.want_speed = 0;
+	Error1.now_speed = Error2.now_speed = Error3.now_speed = Error4.now_speed = Error5_up12.now_speed = Error5_up122.now_speed = 0;
 	
-	Error1.want_speed = Error2.want_speed = Error3.want_speed = Error4.want_speed =0;
-	Error1.now_speed = Error2.now_speed = Error3.now_speed = Error4.now_speed = 0;
-	
-	Error1.now_error = Error2.now_error = Error3.now_error = Error4.now_error =0;
-	Error1.last_error = Error2.last_error = Error3.last_error = Error4.last_error =0;
-	Error1.previous_error = Error2.previous_error = Error3.previous_error = Error4.previous_error = 0;
-	Error1.i_error = Error2.i_error = Error3.i_error = Error4.i_error = 0;
+	Error1.now_error = Error2.now_error = Error3.now_error = Error4.now_error = Error5_up12.now_error = Error5_up122.now_error = 0;
+	Error1.last_error = Error2.last_error = Error3.last_error = Error4.last_error = Error5_up12.last_error = Error5_up122.last_error = 0;
+	Error1.previous_error = Error2.previous_error = Error3.previous_error = Error4.previous_error = Error5_up12.previous_error = Error5_up122.previous_error = 0;
+	Error1.i_error = Error2.i_error = Error3.i_error = Error4.i_error = Error5_up12.i_error = Error5_up122.previous_error = 0;
 	
 	Error1.out_max = Error2.out_max = Error3.out_max = Error4.out_max = 8000;
-	Error1.limit = Error2.limit = Error3.limit = Error4.limit = 3000;
-	Error1.result = Error2.result = Error3.result = Error4.result = 0;
+	Error5_up12.out_max = 4000;
+	Error5_up122.out_max = 6000;
+	Error1.limit = Error2.limit = Error3.limit = Error4.limit = Error5_up12.limit = Error5_up122.limit = 3000;
+	Error1.result = Error2.result = Error3.result = Error4.result = Error5_up12.result = Error5_up122.result = 0;
 }
 
 float PidCalculation1(void)
 {
-	Error1.want_speed = -y_ratio*Error1.limit - x_ratio*Error1.limit + w_ratio*Error1.limit;
+    //float w1_ratio = StraightCalculation(0);
+	//if(out == 2) Error1.want_speed = 3000 + 3000 + 3000;
+	//else 
+	Error1.want_speed = y_ratio*Error1.limit + x_ratio*Error1.limit + w1_ratio*Error1.limit;
 	Error1.now_speed = fpchassis.Speed_wheel[0];
 	Error1.now_error = Error1.want_speed - Error1.now_speed;
 	Error1.i_error = Error1.now_error * Error1.Ki;
@@ -57,7 +69,10 @@ float PidCalculation1(void)
 
 float PidCalculation2(void)
 {
-	Error2.want_speed = -y_ratio*Error2.limit + x_ratio*Error2.limit + w_ratio*Error2.limit;
+	//if(out == 2) Error2.want_speed = 3000 - 3000 + 3000;
+	//float w1_ratio = StraightCalculation(0);
+	//else 
+	Error2.want_speed = y_ratio*Error2.limit - x_ratio*Error2.limit + w1_ratio*Error2.limit;
 	Error2.now_speed = fpchassis.Speed_wheel[1];
 	Error2.now_error = Error2.want_speed - Error2.now_speed;
 	Error2.i_error = Error2.now_error * Error1.Ki;
@@ -74,7 +89,10 @@ float PidCalculation2(void)
 
 float PidCalculation3(void)
 {
-	Error3.want_speed = y_ratio*Error3.limit - x_ratio*Error3.limit + w_ratio*Error3.limit;
+	//float w1_ratio = StraightCalculation(0);
+	//if(out == 2) Error3.want_speed = -3000 + 3000 + 3000;
+	//else 
+	Error3.want_speed = -y_ratio*Error3.limit + x_ratio*Error3.limit + w1_ratio*Error3.limit;
 	Error3.now_speed = fpchassis.Speed_wheel[2];
 	Error3.now_error = Error3.want_speed - Error3.now_speed;
 	Error3.i_error = Error3.now_error * Error3.Ki;
@@ -91,7 +109,10 @@ float PidCalculation3(void)
 
 float PidCalculation4(void)
 {
-	Error4.want_speed = y_ratio*Error4.limit + x_ratio*Error4.limit +w_ratio*Error4.limit;
+	//float w1_ratio = StraightCalculation(0);   
+	//if(out == 2) Error4.want_speed = -3000 - 3000 + 3000;
+	//else 
+	Error4.want_speed = -y_ratio*Error4.limit - x_ratio*Error4.limit + w1_ratio*Error4.limit;
 	Error4.now_speed = fpchassis.Speed_wheel[3];
 	Error4.now_error = Error4.want_speed - Error4.now_speed;
 	Error4.i_error = Error4.now_error * Error4.Ki;
@@ -105,6 +126,63 @@ float PidCalculation4(void)
 	Error4.result = Error4.result < -Error4.out_max ? -Error4.out_max : Error4.result;
 	return Error4.result;
 }
+
+float PidCalculation_UP122(void)
+{  
+	Error5_up122 .want_speed = w_ratio*4000; // +w1_ratio*Error4.limit;
+	Error5_up122 .now_speed = Gyo[2]; 
+	Error5_up122 .now_error = Error5_up122.want_speed - Error5_up122.now_speed;
+	//Error5_up122.i_error = Error5_up122.now_error * Error5_up122.Ki;
+	
+	Error5_up122.result = Error5_up122.Kp * Error5_up122.now_error + Error5_up122.Ki * Error5_up122.sum_error + Error5_up122.Kd * (Error5_up122.now_error-Error5_up122.last_error);
+	//Error5_up122.result += Error5_up122.Kp * (Error5_up122.now_error-Error5_up122.last_error) + Error5_up122.i_error + Error5_up122.Kd * (Error5_up122.now_error-2*Error5_up122.last_error+Error5_up122.previous_error);
+	
+	Error5_up122.sum_error += Error5_up122.now_error;
+	Error5_up122.previous_error = Error5_up122.last_error;
+	Error5_up122.last_error = Error5_up122.now_error;
+	
+	Error5_up122.result = Error5_up122.result > Error5_up122.out_max ? Error5_up122.out_max : Error5_up122.result; 
+	Error5_up122.result = Error5_up122.result < -Error5_up122.out_max ? -Error5_up122.out_max : Error5_up122.result;
+	return Error5_up122.result; 
+}
+
+
+float PidCalculation_UP12(void)
+{
+	//float w1_ratio = StraightCalculation(0);   
+	Error5_up12 .want_speed += w_ratio/300 * 180 ; // +w1_ratio*Error4.limit;
+	if(Error5_up12 .want_speed > 179) Error5_up12 .want_speed = 179;
+	else if(Error5_up12 .want_speed < -179) Error5_up12 .want_speed = -179;
+	Error5_up12 .now_speed = Eular[2]; 
+	Error5_up12 .now_error = Error5_up12.want_speed - Error5_up12.now_speed;
+	//Error5_up12 .i_error = Error5_up12.now_error * Error5_up12.Ki; 
+	
+	Error5_up12.result = Error5_up12.Kp * Error5_up12.now_error + Error5_up12.Ki * Error5_up12.sum_error + Error5_up12.Kd * (Error5_up12.now_error-Error5_up12.last_error);
+	
+	//回头的代码
+	//Error5_up12.result = Error5_up12.Kp * Error5_up12.now_error + Error5_up12.Ki * Error5_up12.now_error + Error5_up12.Kd * (Error5_up12.now_error-Error5_up12.last_error);
+	//Error5_up12 .result = Error5_up12.Kp * (Error5_up12.now_error-Error5_up12.last_error) + Error5_up12.i_error + Error5_up12.Kd * (Error5_up12.now_error-2*Error5_up12.last_error+Error5_up12.previous_error);
+	
+	Error5_up12.sum_error += Error5_up12.now_error;
+	Error5_up12.previous_error = Error5_up12.last_error;
+	Error5_up12.last_error = Error5_up12.now_error;
+	
+	Error5_up12.result = Error5_up12.result > Error5_up12.out_max ? Error5_up12.out_max : Error5_up12.result; //积分限幅
+	Error5_up12.result = Error5_up12.result < -Error5_up12.out_max ? -Error5_up12.out_max : Error5_up12.result;
+	return Error5_up12.result;
+}
+
+float now_error,last_error,w1_radio;
+float Circle(void)
+{
+	now_error = Eular[2];
+	last_error = now_error;
+	int error = 0;
+	error = now_error - last_error;
+	if(error > 360) 
+	return error / 180;
+}
+
 
 /*
 float PID_Increment(PID *pid,float tar,float speed_rx)

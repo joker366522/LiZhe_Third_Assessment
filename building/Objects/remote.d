@@ -1,5 +1,4 @@
 .\building\objects\remote.o: function\remote.c
-.\building\objects\remote.o: function\remote.h
 .\building\objects\remote.o: function\main.h
 .\building\objects\remote.o: .\libraries\inc\stm32f4xx.h
 .\building\objects\remote.o: .\startup\core_cm4.h
@@ -27,3 +26,7 @@
 .\building\objects\remote.o: function\timer.h
 .\building\objects\remote.o: function\PID.h
 .\building\objects\remote.o: function\remote.h
+.\building\objects\remote.o: function\imu_data_decode.h
+.\building\objects\remote.o: F:\keil\ARM\ARMCC\Bin\..\include\stdbool.h
+.\building\objects\remote.o: function\packet.h
+.\building\objects\remote.o: function\usart1.h

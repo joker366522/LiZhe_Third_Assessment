@@ -5,5 +5,9 @@
 
 extern void TIM3_Int_Init(void);
 extern void TIM3_IRQHandler(void);
+
+extern float Eular[3];
+extern short Gyo[3];
+extern float w1_ratio;
 #endif
 

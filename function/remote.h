@@ -20,7 +20,7 @@ typedef struct
 extern romote fpromote;
 extern u8 remote_cnt;
 extern u8 systemReset_flag;
- 
+
 extern float x_ratio;
 extern float y_ratio;
 extern float w_ratio;
@@ -28,6 +28,10 @@ extern float w_ratio;
 extern char out;
 
 extern void change(void);
+extern float StraightCalculation(void);
+
+extern void StraightInit(void);
+extern float StraightCalculation(void);
 
 extern void remote_config(void);
 

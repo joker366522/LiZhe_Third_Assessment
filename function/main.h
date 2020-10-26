@@ -7,6 +7,9 @@
 #include "timer.h"
 #include "PID.h"
 #include "remote.h"
-  
+#include "imu_data_decode.h"
+#include "packet.h"
+#include "usart1.h"
+ 
 #endif
 

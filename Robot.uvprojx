@@ -412,6 +412,21 @@
               <FileType>1</FileType>
               <FilePath>.\function\remote.c</FilePath>
             </File>
+            <File>
+              <FileName>usart1.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\function\usart1.c</FilePath>
+            </File>
+            <File>
+              <FileName>packet.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\function\packet.c</FilePath>
+            </File>
+            <File>
+              <FileName>imu_data_decode.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\function\imu_data_decode.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

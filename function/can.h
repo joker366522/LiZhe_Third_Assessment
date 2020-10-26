@@ -14,7 +14,10 @@ typedef struct
 
 extern motor fpchassis;
 extern void CAN1_Mode_Init(void);
+extern void CAN2_Mode_Init(void);
+
 extern void CAN1_RX0_IRQHandler(void);
-extern void CAN_Send_Msg(int a1,int a2,int a3,int a4);
+extern void CAN1_Send_Msg(int a1,int a2,int a3,int a4);
+extern void CAN2_Send_Msg(int a,int b);
 
 #endif

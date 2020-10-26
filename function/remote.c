@@ -1,8 +1,10 @@
-#include "remote.h"
+#include "main.h"
+
+int temp1=1,temp2=36;
 
 u8 sbus_rx_buffer[25];
 float x_ratio,y_ratio,w_ratio;
-char out;
+char out; //左边按键的值
 
 void remote_config(void)//串口2
 {	
@@ -151,6 +153,42 @@ void change(void)
     if(x_ratio <= 0.1f && x_ratio >= -0.1f) x_ratio = 0.0f;
     if(y_ratio <= 0.1f && y_ratio >= -0.1f) y_ratio = 0.0f;
 	if(w_ratio <= 0.1f && w_ratio >= -0.1f) w_ratio = 0.0f;
+}
+
+typedef struct 
+{
+	float target;
+	float fact;
+	float difference;
+	float outpt;
+}StraightStructure;
+StraightStructure straight;
+
+void StraightInit(void)
+{
+	straight.target = Eular[2];
+	straight.fact = Eular[2];
+	straight.difference = 0;
+	straight.outpt = 0;
+}
+ 
+float StraightCalculation(void) //用于计算真正的w值
+{
+	straight.fact = Eular[2];
+	straight.target += w_ratio*temp1;
+	
+	if(straight.target < -179.9) straight.target = 179.9;
+	else if(straight.target > 179.9) straight.target = -179.9;
+	
+	straight.difference = straight.target - straight.fact;
+	if(straight.difference < -180) straight.difference = straight.difference + 180;
+	else if(straight.difference > 180) straight.difference = straight.difference - 180;
+	
+	straight.outpt = straight.difference/temp2;
+	
+	if(straight.outpt > 1) return 1;
+	else if(straight.outpt < -1) return -1;
+	else return straight.outpt; 
 }
 
 

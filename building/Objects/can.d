@@ -26,3 +26,7 @@
 .\building\objects\can.o: function\timer.h
 .\building\objects\can.o: function\PID.h
 .\building\objects\can.o: function\remote.h
+.\building\objects\can.o: function\imu_data_decode.h
+.\building\objects\can.o: F:\keil\ARM\ARMCC\Bin\..\include\stdbool.h
+.\building\objects\can.o: function\packet.h
+.\building\objects\can.o: function\usart1.h
